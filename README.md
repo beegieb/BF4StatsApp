@@ -43,3 +43,5 @@ outcomes. To avoid unecessarily hitting the [BF4stats.com API] [2] too frequentl
 hit the predict button when you have entered the names of all players you want to
 compare
 
+[1]: http://battlelog.battlefield.com/bf4/
+[2]: http://bf4stats.com/
