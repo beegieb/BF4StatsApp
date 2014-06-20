@@ -7,11 +7,12 @@ ovoPlatforms <- c("PC", "PS4", "Xbox One", "PS3", "Xbox 360")
 mapNames <- read.csv("data/mapNames.csv")$name
 
 platMap <- function(plat){
-  if (plat == "PS3") { "ps3" }
-  else if (plat == "PS4") { "ps4" }
-  else if (plat == "Xbox 360") { "xbox" }
-  else if (plat == "Xbox One") { "xone" }
-  else if (plat == "PC") { "pc" }
+  switch(plat, 
+         "PS3" = "ps3",
+         "PS4" = "ps4",
+         "Xbox 360" = "xbox",
+         "Xbox One" = "xone",
+         "PC" = "pc")
 }
 
 getPlayerStats <- function(name, plat) {
