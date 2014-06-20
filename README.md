@@ -39,7 +39,7 @@ Beegie_B on PS4 vs Smoked_Baboon on PS3
 ### Using the 12v12 Conquest prediction tool
 Enter the names of at least 1 player per team and hit the "Predict" button. Both players
 must be on the same platform. Selecting the map will also give different prediction 
-outcomes. To avoid unecessarily hitting the [BF4stats.com API] [2] too frequently only
+outcomes. To avoid unecessarily hitting the [BF4stats.com] [2] API too frequently only
 hit the predict button when you have entered the names of all players you want to
 compare
 
