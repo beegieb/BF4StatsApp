@@ -36,7 +36,7 @@ shinyUI(
         ),
       fluidRow(actionButton("goButton", "Predict!")),
       fluidRow(
-        column(6,
+        column(4,
           h3("Team 1"),
           textInput("t1p1", label = "Player 1 Name"),
           uiOutput("t1p1Status"),
@@ -63,7 +63,7 @@ shinyUI(
           textInput("t1p12", label = "Player 12 Name"),
           uiOutput("t1p12Status")
           ),
-        column(6,
+        column(4,
           h3("Team 2"),
           textInput("t2p1", label = "Player 1 Name"),
           uiOutput("t2p1Status"),
