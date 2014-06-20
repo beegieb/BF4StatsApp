@@ -3,7 +3,7 @@ library(ggplot2)
 
 source("helpers.R")
 
-reportData <- read.csv("data/reportData.csv")
+reportData <- read.csv("data/reportData.csv.bz2")
 load("models/finalModel")
 load("models/ovoModel")
 

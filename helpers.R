@@ -4,6 +4,7 @@ library(rjson)
 
 platforms <- c("PS3", "Xbox 360")
 ovoPlatforms <- c("PC", "PS4", "Xbox One", "PS3", "Xbox 360")
+mapNames <- read.csv("data/mapNames.csv")$name
 
 platMap <- function(plat){
   if (plat == "PS3") { "ps3" }
