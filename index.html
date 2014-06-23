@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Predicting Battlefield 4 Conquest Games</title>
+	<meta name="description" content="Predicting Battlefield 4 Conquest Games">
+	<meta name="author" content="Miroslaw Horbal">
+	<meta name="generator" content="slidify" />
+	
+	<!-- LOAD STYLE SHEETS -->
+	<link rel="stylesheet" href="libraries/frameworks/html5slides/default/styles.css">
+	<link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />    
+</head>
+<body style='display: none'>
+	<section class='slides layout-regular template-regular'>
+     <article class="" id="slide-1" style="background:;">
+  <h3>Predicting Battlefield 4 Conquest Games</h3>
+  <p>Why should we try to predict the outcome of games? </p>
+
+<ol>
+<li>We develop statistical models of factors that are important in determining a winning team</li>
+<li>We can learn about natural imbalances in the game from historical data</li>
+<li>We can develop automated server-balancing tools via discrete optimization to 
+improve the player experiance</li>
+</ol>
+
+</article>
+
+<article class="" id="slide-2" style="background:;">
+  <h3>Factors that determine a winning team</h3>
+  <ul>
+<li>Is it really possible to predict the outcome of a game of conquest using 
+historical data? </li>
+<li>Are there factors that exist that can be used to predict the winning team?</li>
+</ul>
+
+<p>We think: Yes!</p>
+
+<ul>
+<li>We collected the in-game statistics of 175770 players on PS3 and 
+Xbox 360 and 10830 Conquest battle reports</li>
+<li>We computed the average difference of kill/death ratio (KDR) between both teams</li>
+<li>We can predict the outcome of a game of Conquest with 
+73.32% accuracy using <em>only</em>
+KDR</li>
+</ul>
+
+</article>
+
+<article class="" id="slide-3" style="background:;">
+  <h3></h3>
+  <p><img src="assets/fig/PlotKDRDensity.png" title="plot of chunk PlotKDRDensity" alt="plot of chunk PlotKDRDensity" style="display: block; margin: auto;" /></p>
+
+<p>It&#39;s clear from this figure that we determine factors that can be used for predicting
+the outcome of games. KDR is only one of <em>many</em> factors that can be used, and we can expect
+improvments in prediction accuracy as we include other correlated factors</p>
+
+</article>
+
+<article class="" id="slide-4" style="background:;">
+  <h3>Discovering imbalances in games</h3>
+  <ul>
+<li>We can use historical report data to explore natural imbalances in game design</li>
+<li>By comparing the average number of wins across maps for each team we can estimate balance flaws in
+map design</li>
+</ul>
+
+<p><img src="assets/fig/GetMapImbalance.png" title="plot of chunk GetMapImbalance" alt="plot of chunk GetMapImbalance" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-5" style="background:;">
+  <h3>Imrpoving automated team balancing</h3>
+  <ul>
+<li>We can use report data and player data to improve automated server balancing so games are not one-sided</li>
+<li>We can train a probabalistic model for \(h(t_1, t_2) = P(t_1 \text{Wins} | t_1, t_2 )\) where \(t_1, t_2\) are
+players for Team 1 and 2 respectively </li>
+<li>Using discrete optimization algorithms such as branch and bound we can efficiently optimize the player 
+grouping of Team 1 and Team 2 to solve: \[\arg\!\min_{t_1,t_2} |h(t_1, t_2)-0.5|\]</li>
+<li>This optimization can naturally include squad constraints</li>
+</ul>
+
+</article>
+
+  </section>
+</body>
+  <!-- LOAD JAVASCRIPTS  -->
+	<script src='libraries/frameworks/html5slides/default/slides.js'></script>
+	<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+	    tex2jax: {
+	      inlineMath: [['$','$'], ['\\(','\\)']],
+	      processEscapes: true
+	    }
+	  });
+	</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script> -->
+	<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+	<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+	 
+	</html>
